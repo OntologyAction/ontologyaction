@@ -1,0 +1,51 @@
+:root {
+  /* 1. 背景统一为大白底 */
+  --vp-sidebar-bg-color: #ffffff;
+  
+  /* 2. 品牌色定义（周老师风格的深蓝色或科技蓝） */
+  /* 建议使用：#3eaf7c (Vue绿) 或 #2c3e50 (深蓝) 或 #1a73e8 (Google蓝) */
+  --vp-c-brand-1: #1a73e8; 
+  --vp-c-brand-next: var(--vp-c-brand-1);
+}
+
+/* 3. 彻底去掉侧边栏右侧分割线，实现纯净感 */
+.VPSidebar {
+  border-right: none !important;
+}
+
+/* 4. 侧边栏：鼠标滑过时的效果 */
+.VPSidebarItem .link:hover .text {
+  color: var(--vp-c-brand-1) !important;
+  transition: color 0.25s;
+}
+
+/* 5. 核心修复：选中（Active）状态的极致加粗与变色 */
+/* 使用 :is 伪类确保同时覆盖一级和二级导航 */
+.VPSidebarItem.is-active > .item .link .text,
+.VPSidebarItem.is-active > .item .text,
+.VPSidebarItem.active > .item .link .text {
+  color: var(--vp-c-brand-1) !important;
+  /* 使用 800 或 900 达到“黑体”效果，注意字体库需支持 */
+  font-weight: 800 !important; 
+  /* 稍微增加一点字间距，模拟印刷黑体感 */
+  letter-spacing: 0.5px;
+}
+
+/* 额外的：去掉选中项背景的微弱灰色，保持大白底 */
+.VPSidebarItem.is-active, 
+.VPSidebarItem.active {
+  background-color: transparent !important;
+}
+
+
+/* 6. 辅助：去除选中项左侧的默认指示线（如果不需要的话） */
+/* 周老师的风格通常比较简洁，可以去掉或者保留 */
+.VPSidebarItem.active > .item {
+  border-left-color: var(--vp-c-brand-1);
+}
+
+/* 7. 调整正文字体，增强阅读感 */
+.vp-doc p, .vp-doc li {
+  line-height: 1.8;
+  color: #353535;
+}
