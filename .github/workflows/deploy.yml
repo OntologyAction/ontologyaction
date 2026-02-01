@@ -1,18 +1,18 @@
-# ×Ô¶¯»¯²¿Êğ VitePress Õ¾µãµ½ GitHub Pages µÄ½Å±¾
+# è‡ªåŠ¨åŒ–éƒ¨ç½² VitePress ç«™ç‚¹åˆ° GitHub Pages çš„è„šæœ¬
 name: Deploy VitePress site to Pages
 
 on:
   push:
-    branches: [main] # ¼àÌı main ·ÖÖ§µÄÍÆËÍ
-  workflow_dispatch: # ÔÊĞíÊÖ¶¯´¥·¢
+    branches: [main] # ç›‘å¬ main åˆ†æ”¯çš„æ¨é€
+  workflow_dispatch: # å…è®¸æ‰‹åŠ¨è§¦å‘
 
-# ÉèÖÃ GITHUB_TOKEN µÄÈ¨ÏŞ£¬ÒÔÔÊĞí²¿Êğµ½ GitHub Pages
+# è®¾ç½® GITHUB_TOKEN çš„æƒé™ï¼Œä»¥å…è®¸éƒ¨ç½²åˆ° GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# ÏŞÖÆÍ¬Ê±Ö»ÄÜÓĞÒ»¸ö²¿ÊğÈÎÎñÔÚÔËĞĞ
+# é™åˆ¶åŒæ—¶åªèƒ½æœ‰ä¸€ä¸ªéƒ¨ç½²ä»»åŠ¡åœ¨è¿è¡Œ
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # ÔÊĞí VitePress »ñÈ¡×îºó¸üĞÂÊ±¼ä
+          fetch-depth: 0 # å…è®¸ VitePress è·å–æœ€åæ›´æ–°æ—¶é—´
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -36,12 +36,12 @@ jobs:
         run: npm install
 
       - name: Build with VitePress
-        run: npm run docs:build # ±àÒë docs ÏÂµÄÄÚÈİ
+        run: npm run docs:build # ç¼–è¯‘ docs ä¸‹çš„å†…å®¹
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist # ÉÏ´«±àÒëºóµÄ¾²Ì¬ HTML
+          path: docs/.vitepress/dist # ä¸Šä¼ ç¼–è¯‘åçš„é™æ€ HTML
 
   deploy:
     environment:
