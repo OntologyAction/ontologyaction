@@ -1,1 +1,0 @@
-import{_ as t,o as i,c as r,ae as n}from"./chunks/framework.BD9pLfSD.js";const A=JSON.parse('{"title":"OntologyAction","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),o={name:"index.md"};function e(p,a,l,s,c,h){return i(),r("div",null,[...a[0]||(a[0]=[n("",83)])])}const b=t(o,[["render",e]]);export{A as __pageData,b as default};
