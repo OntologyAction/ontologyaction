@@ -49,3 +49,17 @@
   line-height: 1.8;
   color: #353535;
 }
+
+/* 限制 Mermaid 图表的最大宽度，并使其居中 */
+.mermaid {
+  max-width: 650px; /* 建议宽度在 600-700px 之间，最有纸质书感 */
+  margin: 2rem auto; /* 上下留白，左右自动居中 */
+  display: flex;
+  justify-content: center;
+}
+
+/* 确保 SVG 内部比例不失真 */
+.mermaid svg {
+  height: auto !important;
+  width: 100% !important;
+}
