@@ -38,8 +38,10 @@
 
 本体优先架构是一个持续进化的范式，我们尤其期待来自架构师、CIO 及咨询顾问的真实反馈：
 
-1. **观点碰撞**：欢迎在 [GitHub Discussions](https://github.com) 或 [Issues](https://github.com) 提交建议。
-2. **贡献模板**：通过 Pull Request 提交您在特定行业的本体建模实践。
+1. **观点碰撞**：欢迎在  
+   [OntologyAction Discussions](https://github.com/OntologyAction/ontologyaction/discussions)  
+   或 [OntologyAction Issues](https://github.com/OntologyAction/ontologyaction/issues)  
+   提交建议,本体建模实践。
 3. **实战案例**：分享您在消除 AI 幻觉、重构复杂系统过程中的心得。
 
 ---
@@ -47,7 +49,7 @@
 ## ⚖️ 许可与署名
 
 - **内容授权**：本仓库文档采用 [CC BY-NC-ND 4.0](https://creativecommons.org) 许可协议。
-- **发起人**：[YS Zheng](https://github.com) (资深架构师 / 数字化转型顾问)
+- **发起人**：[Yongsheng Zheng](https://github.com) (资深架构师 / 数字化转型顾问)
 - **联系我们**：请通过 GitHub Issues 或 [Official Website](https://ontologyaction.com) 与我们取得联系。
 
 ---
