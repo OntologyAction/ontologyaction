@@ -86,3 +86,30 @@
 .VPSidebarItem .link:focus .text {
   color: #007FFF !important;
 }
+
+/* --- 正文标题排版：确立“标题即容器”的秩序 --- */
+
+/* 1. 针对二级标题 (##) ：消除顶部分割线，确立底部分割线 */
+.vp-doc h2 {
+  border-top: none !important;    /* 彻底消除标题上方的默认横线 */
+  border-bottom: 1px solid #eaecef !important; /* 在标题下方建立干脆的细线 */
+  padding-top: 2.5rem !important; /* 增加上方留白，确立呼吸感 */
+  padding-bottom: 0.5rem !important; /* 缩短标题与下划线的距离 */
+  margin-bottom: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #000000  !important;      /* 凤凰架构经典的深青灰色 */
+}
+
+/* 2. 针对三级标题 (###) ：可选，增加逻辑层次感 */
+.vp-doc h3 {
+  border-bottom: 1px solid #f0f0f0 !important; /* 更浅、更细的线 */
+  padding-bottom: 0.3rem !important;
+  margin-top: 2rem !important;
+  color: #000000 ; /* 模仿凤凰架构，三级标题可使用品牌色点缀，也可保持黑色 */
+}
+
+/* 3. 修正锚点偏移：确保侧边栏点击后，标题不会被导航栏遮挡线 */
+.vp-doc h2:target, 
+.vp-doc h3:target {
+  scroll-margin-top: 90px !important;
+}

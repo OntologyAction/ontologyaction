@@ -3,6 +3,9 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 
 export default withMermaid(
   defineConfig({
+    // 核心指令：彻底关闭深色模式切换功能
+  appearance: false,
+    cleanUrls: true,
     // --- 顶层配置 ---
     title: "OntologyAction",
     description: "本体优先架构 (Ontology-First Architecture)",
@@ -14,10 +17,21 @@ export default withMermaid(
 
     // --- 主题配置 ---
     themeConfig: {
+       nav: [
+      { text: '关于作者', link: '/about' },
+      { 
+        text: '外部链接', 
+        items: [
+          { text: 'GitHub 仓库', link: 'https://github.com/OntologyAction/ontologyaction' },
+          { text: '参与讨论', link: 'https://github.com/orgs/OntologyAction/discussions' }
+        ]
+      }
+    ],
       aside: false, 
       footer: {
-        message: '基于 <a href="https://creativecommons.org" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a> 许可协议发布',
-        copyright: `Copyright © 2024-${new Date().getFullYear()} <a href="https://ontologyaction.com">OntologyAction</a> | <a href="https://github.com" target="_blank" rel="noopener">YS Zheng</a>`
+        message: '基于 CC BY-NC-ND 4.0 许可协议发布',
+        // 这里可以统一署名，确立全站版权主权
+        copyright: `Copyright © 2024-${new Date().getFullYear()} 郑勇胜 (Yongsheng Zheng) | OntologyAction`
       },
       
       sidebar: [
@@ -60,7 +74,18 @@ export default withMermaid(
               ]
             }
           ]
+        },
+        {
+          text: '其他',
+          collapsed: false,
+          items: [
+             {
+              text: '关于作者',
+              link: '/about'
+            }
+          ]
         }
+
       ]
     }
   })
