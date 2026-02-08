@@ -2,25 +2,20 @@
   "name": "ontologyaction",
   "version": "1.0.0",
   "description": "数字化转型咨询相关软件，咨询顾问在讲解方法论时能同步提供系统，让客户的数字化转型更容易落地",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:build": "vitepress build docs"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github-ontology:OntologyAction/ontologyaction.git"
+  "dependencies": {
+    "vue": "^3.5.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
     "mermaid": "^11.12.2",
     "vitepress": "^1.6.4",
-    "vitepress-plugin-mermaid": "^2.0.17",
-    "vue": "^3.5.27"
+    "vitepress-plugin-mermaid": "^2.0.17"
   }
 }
