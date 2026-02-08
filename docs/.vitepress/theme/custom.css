@@ -1,65 +1,70 @@
+/* 1. 变量定义：确立主色调 */
 :root {
-  /* 1. 背景统一为大白底 */
-  --vp-sidebar-bg-color: #ffffff;
-  
-  /* 2. 品牌色定义（周老师风格的深蓝色或科技蓝） */
-  /* 建议使用：#3eaf7c (Vue绿) 或 #2c3e50 (深蓝) 或 #1a73e8 (Google蓝) */
-  --vp-c-brand-1: #1a73e8; 
-  --vp-c-brand-next: var(--vp-c-brand-1);
+  --vp-c-brand-1: #007FFF !important; 
+  --vp-c-brand-next: #007FFF !important;
+  --vp-c-brand-soft: transparent !important;
 }
 
-/* 3. 彻底去掉侧边栏右侧分割线，实现纯净感 */
-.VPSidebar {
-  border-right: none !important;
+/* 2. 根目录与二级目录标题：确立层级秩序 */
+.VPSidebarItem.level-0 > .item > .text {
+  font-size: 1.15rem !important;
+  font-weight: 900 !important;
+  color: #000000 !important;
+  padding-bottom: 8px;
 }
 
-/* 4. 侧边栏：鼠标滑过时的效果 */
-.VPSidebarItem .link:hover .text {
-  color: var(--vp-c-brand-1) !important;
-  transition: color 0.25s;
+.VPSidebarItem.level-1 > .item > .text {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #1a1a1a !important;
+  padding-top: 12px;
 }
 
-/* 5. 核心修复：选中（Active）状态的极致加粗与变色 */
-/* 使用 :is 伪类确保同时覆盖一级和二级导航 */
+/* 3. 持久高亮逻辑：不仅依赖 is-active，还锁定当前链接状态 */
+/* 我们使用更底层的选择器，确保只要 URL 匹配或类名匹配，高亮就不消失 */
 .VPSidebarItem.is-active > .item .link .text,
 .VPSidebarItem.is-active > .item .text,
-.VPSidebarItem.active > .item .link .text {
-  color: var(--vp-c-brand-1) !important;
-  /* 使用 800 或 900 达到“黑体”效果，注意字体库需支持 */
-  font-weight: 800 !important; 
-  /* 稍微增加一点字间距，模拟印刷黑体感 */
-  letter-spacing: 0.5px;
+.VPSidebarItem.active > .item .link .text,
+.VPSidebarItem.is-link.is-active .text {
+  color: #007FFF !important;
+  font-weight: 900 !important;
+  opacity: 1 !important;
+  transition: none !important;
 }
 
-/* 额外的：去掉选中项背景的微弱灰色，保持大白底 */
-.VPSidebarItem.is-active, 
-.VPSidebarItem.active {
+/* 4. 鼠标滑过：逻辑响应 */
+.VPSidebarItem .link:hover .text {
+  color: #007FFF !important;
+  opacity: 1 !important;
+  transition: color 0.1s ease;
+}
+
+/* 5. 指示器：选中项左侧的“逻辑钢轨” */
+/* 确保只要是 active 状态，线条就绝对显示 */
+.VPSidebarItem.is-active > .item {
+  border-left: 4px solid #007FFF !important;
+  padding-left: 12px !important;
+  margin-left: -2px !important;
+  transition: none !important;
+}
+
+/* 关键修复：消除非活动项的左侧边框干扰 */
+.VPSidebarItem:not(.is-active) > .item {
+  border-left: none !important;
+}
+
+/* 6. 解决侧边栏背景与边框的残留噪音 */
+.VPSidebar {
+  border-right: none !important;
+  background-color: #ffffff !important;
+}
+
+.VPSidebarItem.is-active {
   background-color: transparent !important;
 }
 
-
-/* 6. 辅助：去除选中项左侧的默认指示线（如果不需要的话） */
-/* 周老师的风格通常比较简洁，可以去掉或者保留 */
-.VPSidebarItem.active > .item {
-  border-left-color: var(--vp-c-brand-1);
-}
-
-/* 7. 调整正文字体，增强阅读感 */
-.vp-doc p, .vp-doc li {
-  line-height: 1.8;
-  color: #353535;
-}
-
-/* 限制 Mermaid 图表的最大宽度，并使其居中 */
-.mermaid {
-  max-width: 650px; /* 建议宽度在 600-700px 之间，最有纸质书感 */
-  margin: 2rem auto; /* 上下留白，左右自动居中 */
-  display: flex;
-  justify-content: center;
-}
-
-/* 确保 SVG 内部比例不失真 */
-.mermaid svg {
-  height: auto !important;
-  width: 100% !important;
+/* 7. 特殊补丁：针对单页面锚点点击后类名可能延迟的问题 */
+/* 强制让正在被点击（focus）的链接也显示高亮色 */
+.VPSidebarItem .link:focus .text {
+  color: #007FFF !important;
 }

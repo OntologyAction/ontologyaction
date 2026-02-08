@@ -38,10 +38,7 @@
 
 本体优先架构是一个持续进化的范式，我们尤其期待来自架构师、CIO 及咨询顾问的真实反馈：
 
-1. **观点碰撞**：欢迎在  
-   [OntologyAction Discussions](https://github.com/OntologyAction/ontologyaction/discussions)  
-   或 [OntologyAction Issues](https://github.com/OntologyAction/ontologyaction/issues)  
-   提交建议,本体建模实践。
+1. **观点碰撞**：欢迎在 [OntologyAction Discussions](https://github.com/OntologyAction/ontologyaction/discussions)   或 [OntologyAction Issues](https://github.com/OntologyAction/ontologyaction/issues)   提交建议,本体建模实践。
 3. **实战案例**：分享您在消除 AI 幻觉、重构复杂系统过程中的心得。
 
 ---
