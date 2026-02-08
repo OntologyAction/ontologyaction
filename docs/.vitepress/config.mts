@@ -3,12 +3,21 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 
 export default withMermaid(
   defineConfig({
+          // 1. 必须配置 hostname，sitemap 才能生成正确的绝对路径
+      sitemap: {
+        hostname: 'https://ontologyaction.com' 
+      },
     // 核心指令：彻底关闭深色模式切换功能
   appearance: false,
     cleanUrls: true,
     // --- 顶层配置 ---
     title: "OntologyAction",
     description: "本体优先架构 (Ontology-First Architecture)",
+
+    head: [
+      ['meta', { name: 'keywords', ontent: '本体优先, Palantir Ontology, 架构设计, 数字化转型, AI治理, Ontology-First, 企业架构' }],
+      ['link', { rel: 'icon', href: '/favicon.ico' }] // 增加站点图标，提升搜索展示识别度
+    ],
 
     // --- Mermaid 配置 (与 themeConfig 平级) ---
     mermaid: {
@@ -17,6 +26,7 @@ export default withMermaid(
 
     // --- 主题配置 ---
     themeConfig: {
+
        nav: [
       { text: '关于作者', link: '/about' },
       { 
