@@ -3,6 +3,24 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 
 export default withMermaid(
   defineConfig({
+    // 核心补丁：使用动态导入绕过 ts(6133) 和类型报错
+    async buildEnd({ outDir }) {
+      const fs = await import('node:fs')
+      const path = await import('node:path')
+      
+      try {
+        const sitemapPath = path.resolve(outDir, 'sitemap.xml')
+        const content = fs.readFileSync(sitemapPath, 'utf-8')
+        
+        if (!content.startsWith('<?xml')) {
+          const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}`
+          fs.writeFileSync(sitemapPath, fixedContent)
+          console.log('✅ 已成功注入 sitemap XML 声明')
+        }
+      } catch (e) {
+        console.warn('⚠️ Sitemap 修正跳过（可能尚未生成）')
+      }
+    },
           // 1. 必须配置 hostname，sitemap 才能生成正确的绝对路径
       sitemap: {
         hostname: 'https://ontologyaction.com' 
