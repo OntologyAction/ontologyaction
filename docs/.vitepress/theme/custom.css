@@ -1,3 +1,28 @@
+/* --- 确立左上角 OntologyAction 的品牌主权 --- */
+
+/* 1. 强制将导航栏标题区域设为纯白背景 */
+.VPNavBarTitle, 
+.VPNavBarTitle .title, 
+.VPNavBarTitle .title:hover {
+  background-color: #ffffff !important; /* 强制白底 */
+  color: #000000 !important;             /* 文字设为纯黑，确立权威感 */
+  text-decoration: none !important;      /* 移除可能的下划线 */
+}
+
+/* 2. 移除所有可能的灰色阴影或边框噪音 */
+.VPNavBar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #f0f0f0 !important; /* 仅保留极其微弱的底部分割线 */
+}
+
+/* 3. 设置 Logo 或文字的字重，使其与侧边栏的“黑体秩序”呼应 */
+.VPNavBarTitle .title .text {
+  font-weight: 800 !important;
+  letter-spacing: -0.2px;
+  font-size: 1.2rem;
+}
+
+
 /* 1. 变量定义：确立主色调 */
 :root {
   --vp-c-brand-1: #007FFF !important; 
@@ -39,14 +64,7 @@
   transition: color 0.1s ease;
 }
 
-/* 5. 指示器：选中项左侧的“逻辑钢轨” */
-/* 确保只要是 active 状态，线条就绝对显示 */
-.VPSidebarItem.is-active > .item {
-  border-left: 4px solid #007FFF !important;
-  padding-left: 12px !important;
-  margin-left: -2px !important;
-  transition: none !important;
-}
+
 
 /* 关键修复：消除非活动项的左侧边框干扰 */
 .VPSidebarItem:not(.is-active) > .item {
