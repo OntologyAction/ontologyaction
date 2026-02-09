@@ -16,6 +16,7 @@ try {
     } else {
       console.log('ℹ️ 逻辑检查：sitemap.xml 已存在声明，跳过')
     }
+    const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}`
     fs.writeFileSync(path.resolve('docs/.vitepress/dist', 'sitemap_v2.xml'), fixedContent)
     console.log('✅ 已生成副本 sitemap_v2.xml 用于穿透测试')
   } else {
