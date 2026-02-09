@@ -10,12 +10,16 @@ try {
   if (fs.existsSync(sitemapPath)) {
     const content = fs.readFileSync(sitemapPath, 'utf-8')
     if (!content.startsWith('<?xml')) {
-      const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}`
+      // const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}`
+      const timestamp = `<!-- Build: ${new Date().getTime()} -->`; 
+      const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}\n${timestamp}`;
       fs.writeFileSync(sitemapPath, fixedContent)
       console.log('✅ 物理主权：sitemap.xml 已成功注入 XML 声明')
     } else {
       console.log('ℹ️ 逻辑检查：sitemap.xml 已存在声明，跳过')
     }
+    
+
   } else {
     console.error('❌ 路径断裂：未找到 sitemap.xml，请检查 build 输出目录')
   }
