@@ -13,6 +13,8 @@ try {
       const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}`
       fs.writeFileSync(sitemapPath, fixedContent)
       console.log('✅ 物理主权：sitemap.xml 已成功注入 XML 声明')
+      fs.writeFileSync(path.resolve('docs/.vitepress/dist', 'sitemap_v2.xml'), fixedContent)
+      console.log('✅ 已生成副本 sitemap_v2.xml 用于穿透测试')
     } else {
       console.log('ℹ️ 逻辑检查：sitemap.xml 已存在声明，跳过')
     }
