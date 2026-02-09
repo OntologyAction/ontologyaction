@@ -1,27 +1,29 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-// 修正路径：VitePress 默认输出到 docs/.vitepress/dist
 const sitemapPath = path.resolve('docs/.vitepress/dist/sitemap.xml')
 
 console.log('🚀 物理审计开始：检查路径', sitemapPath)
 
 try {
   if (fs.existsSync(sitemapPath)) {
-    const content = fs.readFileSync(sitemapPath, 'utf-8')
-    if (!content.startsWith('<?xml')) {
-      // const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}`
-      const timestamp = `<!-- Build: ${new Date().getTime()} -->`; 
-      const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}\n${timestamp}`;
-      fs.writeFileSync(sitemapPath, fixedContent)
-      console.log('✅ 物理主权：sitemap.xml 已成功注入 XML 声明')
-    } else {
-      console.log('ℹ️ 逻辑检查：sitemap.xml 已存在声明，跳过')
-    }
+    let content = fs.readFileSync(sitemapPath, 'utf-8')
     
-
+    // --- 移除旧声明（如果存在），确保逻辑纯净 ---
+    content = content.replace(/^<\?xml.*\?>\n?/, '') 
+    
+    // --- 强制注入：声明 + 内容 + 时间戳 ---
+    const timestamp = `<!-- Build: ${new Date().toLocaleString()} -->`; 
+    const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}\n${timestamp}`;
+    
+    fs.writeFileSync(sitemapPath, fixedContent)
+    
+    // --- 同步生成 v2 以供对比 ---
+    fs.writeFileSync(path.resolve('docs/.vitepress/dist', 'sitemap_v2.xml'), fixedContent)
+    
+    console.log('✅ 物理主权：sitemap.xml 已被强制重写并注入时间戳')
   } else {
-    console.error('❌ 路径断裂：未找到 sitemap.xml，请检查 build 输出目录')
+    console.error('❌ 路径断裂：未找到 sitemap.xml')
   }
 } catch (err) {
   console.error('❌ 执行失败：', err.message)
