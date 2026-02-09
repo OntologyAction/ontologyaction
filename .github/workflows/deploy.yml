@@ -38,7 +38,8 @@ jobs:
             chmod -R +x node_modules/.bin
 
       - name: Build with VitePress
-        run: npx vitepress build docs # 编译 docs 下的内容
+        # run: npx vitepress build docs # 编译 docs 下的内容
+        run: npm run build # 运行自定义构建脚本，修复 sitemap.xml
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
