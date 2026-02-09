@@ -15,15 +15,12 @@ try {
     // 2. 强行构造：确保声明与 urlset 之间只有一个换行
     // 在开头显式注入标准声明
     const xmlHeader = '<?xml version="1.0" encoding="UTF-8"?>\n';
-    const timestamp = `\n<!-- Build_ID: ${new Date().getTime()} -->`; 
+    const timestamp = `\n`; 
     
     const fixedContent = xmlHeader + content + timestamp;
     
     // 3. 物理写回：强制 UTF-8 编码
     fs.writeFileSync(sitemapPath, fixedContent, 'utf-8')
-    
-    // 4. 同步生成 v2 用于终极对比
-    fs.writeFileSync(path.resolve('docs/.vitepress/dist', 'sitemap_v2.xml'), fixedContent)
     
     console.log('✅ 物理主权：sitemap.xml 已被强制重置并焊接 XML 声明')
   }
