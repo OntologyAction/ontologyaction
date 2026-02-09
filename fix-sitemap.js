@@ -9,21 +9,23 @@ try {
   if (fs.existsSync(sitemapPath)) {
     let content = fs.readFileSync(sitemapPath, 'utf-8')
     
-    // --- 移除旧声明（如果存在），确保逻辑纯净 ---
-    content = content.replace(/^<\?xml.*\?>\n?/, '') 
+    // 1. 彻底清洗：移除所有已存在的声明和首尾空白，让内容回归纯粹的 <urlset>
+    content = content.replace(/^[\s\S]*?(?=<urlset)/, '').trim();
     
-    // --- 强制注入：声明 + 内容 + 时间戳 ---
-    const timestamp = `<!-- Build: ${new Date().toLocaleString()} -->`; 
-    const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}\n${timestamp}`;
+    // 2. 强行构造：确保声明与 urlset 之间只有一个换行
+    // 在开头显式注入标准声明
+    const xmlHeader = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    const timestamp = `\n<!-- Build_ID: ${new Date().getTime()} -->`; 
     
-    fs.writeFileSync(sitemapPath, fixedContent)
+    const fixedContent = xmlHeader + content + timestamp;
     
-    // --- 同步生成 v2 以供对比 ---
+    // 3. 物理写回：强制 UTF-8 编码
+    fs.writeFileSync(sitemapPath, fixedContent, 'utf-8')
+    
+    // 4. 同步生成 v2 用于终极对比
     fs.writeFileSync(path.resolve('docs/.vitepress/dist', 'sitemap_v2.xml'), fixedContent)
     
-    console.log('✅ 物理主权：sitemap.xml 已被强制重写并注入时间戳')
-  } else {
-    console.error('❌ 路径断裂：未找到 sitemap.xml')
+    console.log('✅ 物理主权：sitemap.xml 已被强制重置并焊接 XML 声明')
   }
 } catch (err) {
   console.error('❌ 执行失败：', err.message)
