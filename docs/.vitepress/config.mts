@@ -7,20 +7,35 @@ export default withMermaid(
     async buildEnd({ outDir }) {
       const fs = await import('node:fs')
       const path = await import('node:path')
-      
-      try {
-        const sitemapPath = path.resolve(outDir, 'sitemap.xml')
+      const sitemapPath = path.resolve(outDir, 'sitemap.xml')
+
+      // 强制等待 2 秒，确保 VitePress 已经把 sitemap 文件写入磁盘
+      await new Promise(resolve => setTimeout(resolve, 2000))
+
+      if (fs.existsSync(sitemapPath)) {
         const content = fs.readFileSync(sitemapPath, 'utf-8')
-        
         if (!content.startsWith('<?xml')) {
-          const fixedContent = `<?xml version="1.0" encoding="UTF-8"?>\n${content}`
-          fs.writeFileSync(sitemapPath, fixedContent)
-          console.log('✅ 已成功注入 sitemap XML 声明')
+          fs.writeFileSync(sitemapPath, `<?xml version="1.0" encoding="UTF-8"?>\n${content}`)
+          console.log('✅ 逻辑补丁：已成功修正 sitemap.xml 声明')
         }
-      } catch (e) {
-        console.warn('⚠️ Sitemap 修正跳过（可能尚未生成）')
+      } else {
+        console.warn('❌ 逻辑断裂：未能捕获 sitemap.xml，请检查 hostname 配置')
       }
     },
+  vite: {
+  build: {
+    chunkSizeWarningLimit: 3000, // 调高至 3MB，抹平警告
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/mermaid')) {
+            return 'mermaid-engine'; // 将巨型 Mermaid 独立打包，避免阻塞主逻辑
+          }
+        }
+      }
+    }
+  }
+},
           // 1. 必须配置 hostname，sitemap 才能生成正确的绝对路径
       sitemap: {
         hostname: 'https://ontologyaction.com' 
