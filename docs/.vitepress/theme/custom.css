@@ -113,3 +113,18 @@
 .vp-doc h3:target {
   scroll-margin-top: 90px !important;
 }
+
+/* --- 首页 Hero：解除默认主题的窄栏限制（592px），让中文长句与内容区同宽 --- */
+.VPHero .name,
+.VPHero .text,
+.VPHero .tagline {
+  max-width: none !important;
+}
+
+/* 桌面端把主文案字号从 56px 收到 44px：23 字中文一行排满，不再折成三行窄条 */
+@media (min-width: 960px) {
+  .VPHero .text {
+    font-size: 44px !important;
+    line-height: 1.35 !important;
+  }
+}

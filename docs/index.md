@@ -30,18 +30,6 @@ features:
     details: 本体优先成熟度模型（Ontology-First Maturity Model）——从 L1 碎片化语义到 L5 本体自进化，评估企业采纳本体优先架构的成熟度。
     link: /assessment/ofmm
     linkText: 查看模型
-  - title: Models · Ontology Templates
-    details: 制造业、供应链、企业通用管理等领域的可复用语义与动作模型，降低本体优先架构的落地冷启动成本。
-    link: /models/ontology-templates
-    linkText: 浏览模板库
-  - title: Insights · 文章
-    details: 方法论文章、实践观察与 AI 架构研究。最新：AI Execution Boundaries — A Governance Methodology for the Age of Agentic AI。
-    link: /insights/
-    linkText: 全部文章
-  - title: About · 关于
-    details: Yongsheng Zheng（郑勇胜）——架构实践者与布道者。曾任京东、华为架构师，现从事企业数字化转型咨询。
-    link: /about
-    linkText: 关于作者
 ---
 
 ## 这是什么？
