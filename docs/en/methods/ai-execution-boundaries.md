@@ -95,7 +95,8 @@ This does not reinvent permission systems or policy engines. It addresses the qu
 
 ## Further Reading
 
-- **[Read the full article on Medium →](https://medium.com/@zhengys/ai-execution-boundaries-a-governance-methodology-for-the-age-of-agentic-ai-4150e2188ecb)** *AI Execution Boundaries: A Governance Methodology for the Age of Agentic AI* (*From AI Responses to Governed Actions*)
+- **[Article #1 on Medium →](https://medium.com/@zhengys/ai-execution-boundaries-a-governance-methodology-for-the-age-of-agentic-ai-4150e2188ecb)** *AI Execution Boundaries: A Governance Methodology for the Age of Agentic AI* (*From AI Responses to Governed Actions*)
+- **[Article #2 on Medium →](https://medium.com/@zhengys/when-ai-can-act-why-actions-must-become-first-class-governance-objects-a7f6d57bf9a9)** *When AI Can Act: Why Actions Must Become First-Class Governance Objects* (*From Asking Data to Changing State*)
 - Framework: [Ontology-First Architecture](/architecture/ontology-first) (currently in Chinese)
 
 *This methodology is being developed as part of an ongoing effort to define practical governance patterns for agentic AI systems.*

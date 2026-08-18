@@ -8,6 +8,19 @@ description: OntologyAction Insights——方法论文章、实践观察与 AI �
 
 ## 2026
 
+### When AI Can Act: Why Actions Must Become First-Class Governance Objects
+
+*From Asking Data to Changing State*
+
+当 Agent 从问数进入改状态，治理对象不能再是普通 Tool Call。这篇文章论证 **Action** 必须成为 first-class governance object：可裁定、可强制、可留证；对接面是写工具过闸，不换已有 Agent。
+
+- **[Read on Medium →](https://medium.com/@zhengys/when-ai-can-act-why-actions-must-become-first-class-governance-objects-a7f6d57bf9a9)**（2026-08-18 发布）
+- 网站方法页：[Methods · AI Execution Boundaries](/en/methods/ai-execution-boundaries)（English）
+
+*Part of the OntologyAction methodology.*
+
+---
+
 ### AI Execution Boundaries: A Governance Methodology for the Age of Agentic AI
 
 *From AI Responses to Governed Actions*
