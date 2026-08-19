@@ -168,7 +168,10 @@ export default withMermaid(
           {
             text: 'Insights · 文章',
             collapsed: false,
-            items: [{ text: '全部文章', link: '/insights/' }]
+            items: [
+              { text: '全部文章', link: '/insights/' },
+              { text: 'When AI Can Act', link: '/insights/when-ai-can-act' }
+            ]
           },
           {
             text: '相关',

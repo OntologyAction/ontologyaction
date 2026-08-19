@@ -27,8 +27,8 @@ features:
     link: /en/methods/ai-execution-boundaries
     linkText: Read the method
   - title: Insights · When AI Can Act
-    details: From Asking Data to Changing State. 当 Agent 从问数进入改状态，治理对象必须是 Action，不能再是普通 Tool Call。（English · Medium）
-    link: https://medium.com/@zhengys/when-ai-can-act-why-actions-must-become-first-class-governance-objects-a7f6d57bf9a9
+    details: From Asking Data to Changing State. 当 Agent 从问数进入改状态，治理对象必须是 Action，不能再是普通 Tool Call。（English）
+    link: /insights/when-ai-can-act
     linkText: Read the article
 ---
 
@@ -40,7 +40,7 @@ features:
 
 - **Framework** 奠定基础——[本体优先架构](/architecture/ontology-first)：语义建模统一设计时与运行时；
 - **Methods** 持续生长——[AI Execution Boundaries](/en/methods/ai-execution-boundaries)（English）：AI 在什么条件下可以改变现实世界；
-- **Insights** 展开论证——[When AI Can Act](https://medium.com/@zhengys/when-ai-can-act-why-actions-must-become-first-class-governance-objects-a7f6d57bf9a9)（English · Medium）：Action 必须成为 first-class governance object；索引在 [Insights](/insights/)；
+- **Insights** 展开论证——[When AI Can Act](/insights/when-ai-can-act)（English）：Action 必须成为 first-class governance object；索引在 [Insights](/insights/)；
 - **Models** 沉淀资产——[Ontology Templates](/models/ontology-templates)：可复用的行业语义模型。
 
 > **「我的语言的界限，意味着我的世界的界限。」** —— 维特根斯坦
