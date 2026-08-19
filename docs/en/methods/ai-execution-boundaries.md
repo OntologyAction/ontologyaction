@@ -4,11 +4,23 @@ head:
   - - link
     - rel: canonical
       href: https://ontologyaction.com/en/methods/ai-execution-boundaries
+  - - link
+    - rel: alternate
+      hreflang: en
+      href: https://ontologyaction.com/en/methods/ai-execution-boundaries
+  - - link
+    - rel: alternate
+      hreflang: zh-CN
+      href: https://ontologyaction.com/methods/ai-execution-boundaries
+  - - link
+    - rel: alternate
+      hreflang: x-default
+      href: https://ontologyaction.com/en/methods/ai-execution-boundaries
 ---
 
 # AI Execution Boundaries
 
-*Method · Part of the OntologyAction methodology* — English · 中文版即将上线 (Chinese version coming soon)
+*Method · Part of the OntologyAction methodology* — English · [中文版](/methods/ai-execution-boundaries)
 
 > **As AI systems become capable of taking actions, a governance boundary that was previously implicit is becoming explicit. We call this boundary the AI Execution Boundary.**
 

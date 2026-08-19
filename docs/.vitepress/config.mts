@@ -123,6 +123,23 @@ export default withMermaid(
             ]
           }
         ],
+        '/methods/': [
+          {
+            text: 'Methods · 方法',
+            collapsed: false,
+            items: [
+              { text: 'AI 执行边界', link: '/methods/ai-execution-boundaries' }
+            ]
+          },
+          {
+            text: '相关',
+            collapsed: false,
+            items: [
+              { text: 'Framework · 本体优先架构', link: '/architecture/ontology-first' },
+              { text: 'Insights', link: '/insights/' }
+            ]
+          }
+        ],
         '/en/methods/': [
           {
             text: 'Methods',
@@ -136,6 +153,7 @@ export default withMermaid(
             collapsed: false,
             items: [
               { text: 'Framework · Ontology-First Architecture', link: '/architecture/ontology-first' },
+              { text: '中文版 · AI 执行边界', link: '/methods/ai-execution-boundaries' },
               { text: 'Insights', link: '/insights/' }
             ]
           }
@@ -177,7 +195,8 @@ export default withMermaid(
             text: '相关',
             collapsed: false,
             items: [
-              { text: 'Methods · AI Execution Boundaries', link: '/en/methods/ai-execution-boundaries' }
+              { text: 'Methods · English', link: '/en/methods/ai-execution-boundaries' },
+              { text: '方法 · 中文', link: '/methods/ai-execution-boundaries' }
             ]
           }
         ]

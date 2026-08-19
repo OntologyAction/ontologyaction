@@ -1,10 +1,22 @@
 ---
 description: AI Execution Boundary（AI 执行边界）——当 AI 从生成回答走向执行动作，企业需要显式定义、运行时强制、且可度量的新治理边界。OntologyAction 方法体系的核心方法之一。
+head:
+  - - link
+    - rel: canonical
+      href: https://ontologyaction.com/methods/ai-execution-boundaries
+  - - link
+    - rel: alternate
+      hreflang: zh-CN
+      href: https://ontologyaction.com/methods/ai-execution-boundaries
+  - - link
+    - rel: alternate
+      hreflang: en
+      href: https://ontologyaction.com/en/methods/ai-execution-boundaries
 ---
 
-<!-- 已于 2026-08-19 发布为 docs/methods/ai-execution-boundaries.md。改中文方法页请改那份，勿再改本草稿。 -->
-
 # AI Execution Boundaries
+
+*方法 · OntologyAction 方法体系* — 中文 · [English](/en/methods/ai-execution-boundaries)
 
 > **As AI systems become capable of taking actions, a governance boundary that was previously implicit is becoming explicit. We call this boundary the AI Execution Boundary.**
 
@@ -70,7 +82,8 @@ Action（+ Evidence / 可裁定率度量）
 
 ## 延伸阅读
 
-- 英文首发文章：**AI Execution Boundaries: A Governance Methodology for the Age of Agentic AI**（*From AI Responses to Governed Actions*）——即将发布于 Medium，发布后在 [Insights](/insights/) 更新链接。
+- **[When AI Can Act](/insights/when-ai-can-act)** *Why Actions Must Become First-Class Governance Objects*（English · 本站）
+- 上一篇索引：[Insights](/insights/)
 - Framework：[本体优先架构](/architecture/ontology-first)
 
 *This methodology is being developed as part of an ongoing effort to define practical governance patterns for agentic AI systems.*
