@@ -26,10 +26,10 @@ features:
     details: 当 AI 开始执行动作，哪些可以自动执行、哪些必须人工掌控？显式定义、运行时强制、可度量的 AI 执行边界。（English）
     link: /en/methods/ai-execution-boundaries
     linkText: Read the method
-  - title: Assessment · OFMM
-    details: 本体优先成熟度模型（Ontology-First Maturity Model）——从 L1 碎片化语义到 L5 本体自进化，评估企业采纳本体优先架构的成熟度。
-    link: /assessment/ofmm
-    linkText: 查看模型
+  - title: Insights · When AI Can Act
+    details: From Asking Data to Changing State. 当 Agent 从问数进入改状态，治理对象必须是 Action，不能再是普通 Tool Call。（English · Medium）
+    link: https://medium.com/@zhengys/when-ai-can-act-why-actions-must-become-first-class-governance-objects-a7f6d57bf9a9
+    linkText: Read the article
 ---
 
 ## 这是什么？
@@ -40,7 +40,7 @@ features:
 
 - **Framework** 奠定基础——[本体优先架构](/architecture/ontology-first)：语义建模统一设计时与运行时；
 - **Methods** 持续生长——[AI Execution Boundaries](/en/methods/ai-execution-boundaries)（English）：AI 在什么条件下可以改变现实世界；
-- **Assessment** 提供标尺——[OFMM](/assessment/ofmm)：架构语义能力的五级成熟度；
+- **Insights** 展开论证——[When AI Can Act](https://medium.com/@zhengys/when-ai-can-act-why-actions-must-become-first-class-governance-objects-a7f6d57bf9a9)（English · Medium）：Action 必须成为 first-class governance object；索引在 [Insights](/insights/)；
 - **Models** 沉淀资产——[Ontology Templates](/models/ontology-templates)：可复用的行业语义模型。
 
 > **「我的语言的界限，意味着我的世界的界限。」** —— 维特根斯坦
